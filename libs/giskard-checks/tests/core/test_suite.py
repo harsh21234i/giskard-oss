@@ -31,10 +31,10 @@ def identity_sut():
     return lambda inputs: inputs
 
 
-def test_check_result_console_falls_back_to_check_kind():
+def test_check_result_console_uses_direct_check_name():
     result = CheckResult.failure(
         message="boom",
-        details={"check_kind": "MyCheck"},
+        check_name="MyCheck",
     )
     console = Console(record=True, width=120)
 
